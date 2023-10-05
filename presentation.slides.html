@@ -7455,17 +7455,294 @@ main {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f8d16d10-4299-40bb-b889-0d4168774ca7">
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8c80f805-03ad-4476-847f-7f2d75849f4d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Sommaire">Sommaire<a class="anchor-link" href="#Sommaire">¶</a></h1><p><a href="#motivation">Motivation</a>
+<a href="#notions-de-base">Notions de Base</a>
+<a href="#example">Un exemple Complet</a>
+<a href="#advanced-notions">Notions Avancées</a></p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=05daf56c-b091-471f-8620-3304ba4c0ae8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Motivations-">Motivations <a class="anchor" id="motivation"></a><a class="anchor-link" href="#Motivations-">¶</a></h2>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=21d2fff4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Un-Exemple-Introductif-(1/x)-">Un Exemple Introductif (1/x) <a class="anchor" id="exemple1.1"></a><a class="anchor-link" href="#Un-Exemple-Introductif-(1/x)-">¶</a></h3><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Types for extremely complex objects.</span>
+<span class="cm"> */</span>
+<span class="c1">// List of available courses</span>
+<span class="kr">type</span><span class="w"> </span><span class="nx">Classes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Maths"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"Physics"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"Computer Science"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"Advanced English"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"Babi-Foot"</span><span class="p">;</span>
+
+<span class="c1">// A student in the University</span>
+<span class="kr">type</span><span class="w"> </span><span class="nx">Student</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">administrationId</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">lastName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">attendedClasses</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">Classes</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">};</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=142be22c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Un-Exemple-Introductif-(2/x)-">Un Exemple Introductif (2/x) <a class="anchor" id="exemple1.2"></a><a class="anchor-link" href="#Un-Exemple-Introductif-(2/x)-">¶</a></h3><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">University</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">students</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">Student</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">){</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">students</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Array</span><span class="o">&lt;</span><span class="nx">Student</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">studentPromotion</span><span class="p">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">students</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">addStudent</span><span class="p">(</span><span class="nx">student</span><span class="o">:</span><span class="w"> </span><span class="kt">Student</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">students</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="k">this</span><span class="p">.</span><span class="nx">students</span><span class="p">,</span><span class="w"> </span><span class="nx">student</span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">   </span>
+<span class="w">    </span><span class="nx">removeStudent</span><span class="p">(</span><span class="nx">administrationId</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">students</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">students</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">student</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="nx">student</span><span class="p">.</span><span class="nx">administrationId</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">administrationId</span><span class="p">})</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">getStudent</span><span class="p">(</span><span class="nx">administrationId</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">Student</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">students</span><span class="p">.</span><span class="nx">find</span><span class="p">((</span><span class="nx">student</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="nx">student</span><span class="p">.</span><span class="nx">administrationId</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">administrationId</span><span class="p">})</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bc96873a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Un-Exemple-Introductif-(3/x)-">Un Exemple Introductif (3/x) <a class="anchor" id="exemple1.3"></a><a class="anchor-link" href="#Un-Exemple-Introductif-(3/x)-">¶</a></h3><div class="highlight"><pre><span></span><span class="kr">type</span><span class="w"> </span><span class="nx">DoctoralStudent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">administrationId</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">lastName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">attendedClasses</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">Classes</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">salary</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">university</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">University</span><span class="p">(</span><span class="s2">"Web Master"</span><span class="p">);</span><span class="w"> </span><span class="c1">// La classe !</span>
+<span class="sb">```</span>
+
+<span class="sb">&gt; Que ce passe-t-il si on ajoute un doctorant à l'université ?</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3df8ea6d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Un-Exemple-Introductif-(4/x)">Un Exemple Introductif (4/x)<a class="anchor-link" href="#Un-Exemple-Introductif-(4/x)">¶</a></h3><p>Dans les faits :</p>
+<div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">robert</span><span class="o">:</span><span class="w"> </span><span class="kt">Student</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">administrationId</span><span class="o">:</span><span class="w"> </span><span class="s2">"452115r"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w"> </span><span class="s2">"DELACREUSE"</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">lastName</span><span class="o">:</span><span class="w"> </span><span class="s2">"Robert"</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">attendedClasses</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Computer Science"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Babi-Foot"</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">nathan</span><span class="o">:</span><span class="w"> </span><span class="kt">DoctoralStudent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">administrationId</span><span class="o">:</span><span class="w"> </span><span class="s2">"559151d"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w"> </span><span class="s2">"D"</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">lastName</span><span class="o">:</span><span class="w"> </span><span class="s2">"Nathan"</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">attendedClasses</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"Babi-Foot"</span><span class="p">],</span>
+<span class="w">    </span><span class="nx">salary</span><span class="o">:</span><span class="w"> </span><span class="kt">2100</span>
+<span class="p">}</span>
+
+<span class="nx">university</span><span class="p">.</span><span class="nx">addStudent</span><span class="p">(</span><span class="nx">robert</span><span class="p">)</span><span class="w"> </span><span class="c1">// OK</span>
+<span class="nx">university</span><span class="p">.</span><span class="nx">addStudent</span><span class="p">(</span><span class="nx">nathan</span><span class="p">)</span><span class="w"> </span><span class="c1">// OK</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=daeb149c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Un-Exemple-Introductif-(5/x)">Un Exemple Introductif (5/x)<a class="anchor-link" href="#Un-Exemple-Introductif-(5/x)">¶</a></h3><p>En revanche :</p>
+<div class="highlight"><pre><span></span><span class="kr">type</span><span class="w"> </span><span class="nx">Teacher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">administrationId</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">lastName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">ClassesGiven</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">Classes</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">salary</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">bob</span><span class="o">:</span><span class="w"> </span><span class="kt">Teacher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">administrationId</span><span class="o">:</span><span class="w"> </span><span class="s2">"452115d"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w"> </span><span class="s2">"SINCKLAR"</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">lastName</span><span class="o">:</span><span class="w"> </span><span class="s2">"Bob"</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">ClassesGiven</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Computer Science"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Babi-Foot"</span><span class="p">],</span>
+<span class="w">    </span><span class="nx">salary</span><span class="o">:</span><span class="w"> </span><span class="kt">3000</span>
+<span class="p">}</span>
+<span class="nx">university</span><span class="p">.</span><span class="nx">addStudent</span><span class="p">(</span><span class="nx">bob</span><span class="p">)</span><span class="w"> </span><span class="c1">// KO</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=05f97907">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Un-Exemple-Introductif-(6/x)">Un Exemple Introductif (6/x)<a class="anchor-link" href="#Un-Exemple-Introductif-(6/x)">¶</a></h3><blockquote>
+<p>Il nous faudrait tranformer ceci :</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="c1">// A student in the University</span>
+<span class="kr">type</span><span class="w"> </span><span class="nx">Student</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">administrationId</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">lastName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">attendedClasses</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">Classes</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3de34e57">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<blockquote>
+<p>En :</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="c1">// A student in the University</span>
+<span class="kr">type</span><span class="w"> </span><span class="nx">Student</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">administrationId</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">lastName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">firstName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">attendedClasses</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">Classes</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+<p>type Academics = Student | DoctoralStudent | Teacher</p>
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4dd0926e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Un-Exemple-Introductif-(7/x)-">Un Exemple Introductif (7/x) <a class="anchor" id="exemple1.x"></a><a class="anchor-link" href="#Un-Exemple-Introductif-(7/x)-">¶</a></h3><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">University</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">academics</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">Academics</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">){</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">academics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Array</span><span class="o">&lt;</span><span class="nx">Academics</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">academicsPromotion</span><span class="p">(){</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">academics</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">addAcademic</span><span class="p">(</span><span class="nx">academic</span><span class="o">:</span><span class="w"> </span><span class="kt">Academics</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">academics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="k">this</span><span class="p">.</span><span class="nx">academics</span><span class="p">,</span><span class="w"> </span><span class="nx">academic</span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">   </span>
+<span class="w">    </span><span class="nx">removeAcademic</span><span class="p">(</span><span class="nx">administrationId</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">academics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">academics</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">academic</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="nx">academic</span><span class="p">.</span><span class="nx">administrationId</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">administrationId</span><span class="p">})</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">getAcademic</span><span class="p">(</span><span class="nx">administrationId</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">Academics</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">academics</span><span class="p">.</span><span class="nx">find</span><span class="p">((</span><span class="nx">academic</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="nx">academic</span><span class="p">.</span><span class="nx">administrationId</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">administrationId</span><span class="p">})</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=96886a59">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Un-Exemple-Introductif---Bilan">Un Exemple Introductif - Bilan<a class="anchor-link" href="#Un-Exemple-Introductif---Bilan">¶</a></h3><blockquote>
+<p>On répond au besoin mais à chaque nouvel ajout d'académicien, il faut modifier le type, c'est un peu lourd à faire...</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4342dc20-bf63-4861-b626-36ccefa4b94e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Notions-de-Base-">Notions de Base <a class="anchor" id="notions-de-base"></a><a class="anchor-link" href="#Notions-de-Base-">¶</a></h2><p>Dans cette section sera explicité les notions de base sur les types génériques (simple, double etc)</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cc57c434-27f1-4bd3-a795-4ff2bed10bb2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Un-exemple-Complet-">Un exemple Complet <a class="anchor" id="example"></a><a class="anchor-link" href="#Un-exemple-Complet-">¶</a></h2><p>Dans cette section sera explicité les notions de base sur les types génériques  (simple, double etc) dans un exemple concret avec les piles sur des étudiants, professeurs et doctorants</p>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cb6e4c63-1f42-4d1b-8466-85edf3772d31">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Notions-Avanc%C3%A9es-">Notions Avancées <a class="anchor" id="advanced-notions"></a><a class="anchor-link" href="#Notions-Avanc%C3%A9es-">¶</a></h2><p>Dans cette section sera explicité les notions avancés sur les types génériques dans un exemple concret avec une classe map, filter et reduce sur des dictionaires ! J'ai hate</p>
 </div>
 </div>
 </div>
