@@ -94,3 +94,36 @@ const bob: Teacher = {
     salary: 3000
 }
 university.addStudent(bob) // Does not works
+
+
+class University2<T extends Academics> {
+
+    name: string;
+    academics: Array<T>;
+
+    constructor(name: string){
+        this.name = name
+        this.academics = new Array<T>;
+    }
+
+    get academicsPromotion(){
+        return this.academics
+    }
+
+    addAcademic(academic: T): void{
+        this.academics = [...this.academics, academic]
+    }
+   
+    removeAcademic(administrationId: string): void {
+        this.academics = this.academics.filter((academic) => {return academic.administrationId === administrationId})
+    }
+
+    getAcademic(administrationId: string): T | undefined {
+        return this.academics.find((academic) => {return academic.administrationId === administrationId})
+    }
+}
+
+const university2 = new University2<Academics>("Web Master reborn"); // instantiation of a new university
+university2.addAcademic(robert) // works
+university2.addAcademic(nathan) // also works
+university2.addAcademic(bob) // Does works
