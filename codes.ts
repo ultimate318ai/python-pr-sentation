@@ -121,7 +121,12 @@ university2.addAcademic(nathan); // works (I am too smart)
 
 // best solution
 
-class University3<T extends Academics> {
+type Academics2 = {
+  administrationId: string;
+  lastName: string;
+  firstName: string;
+};
+class University3<T extends Academics2> {
   name: string;
   academics: Array<T>;
 
