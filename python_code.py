@@ -1,40 +1,45 @@
 from dataclasses import dataclass
-from typing import TypeVar, TypeAlias
+from typing import Generic, TypeVar
 
 
 @dataclass(frozen=True)
 class Academics:
-    administrationId: str
-    lastName: str
-    firstName: str
+    administration_id: str
+    last_name: str
+    first_name: str
 
 
-# type Academics = {
-#     administrationId: string;
-#     lastName: string;
-#     firstName: string;
-# };
+GenericAcademics = TypeVar("GenericAcademics", bound=Academics)
 
-# class University<T> {
-#     name: string;
-#     academics: Array<T>;
 
-#     constructor(name: string){
-#         this.name = name
-#         this.academics = new Array<T>;
-#     }
+class University(Generic[GenericAcademics]):
+    name: str
+    academics: list[GenericAcademics]
 
-#     addAcademic(academic: T): void{
-#         this.academics = [...this.academics, academic]
-#     }
+    def __init__(self, name: str) -> None:
+        super().__init__()
+        self.name = name
+        self.academics = []
 
-#     removeAcademic(administrationId: string): void {
-#         this.academics = this.academics.filter((academic) => {return academic.administrationId === administrationId})
-#         //Property 'administrationId' does not exist on type 'T' !
-#     }
+    def add_academic(self, academic: GenericAcademics) -> None:
+        self.academics.append(academic)
 
-#     getAcademic(administrationId: string): T | undefined {
-#         return this.academics.find((academic) => {return academic.administrationId === administrationId})
-#         //Property 'administrationId' does not exist on type 'T' !
-#     }
-# }
+    def removeAcademic(self, administration_id: str) -> None:
+        removed_student = next(
+            filter(
+                lambda academic: academic.administration_id == administration_id,
+                self.academics,
+            ),
+            None,
+        )
+        if removed_student:
+            self.academics.remove(removed_student)
+
+    def get_academic(self, administration_id: str) -> GenericAcademics | None:
+        return next(
+            filter(
+                lambda academic: academic.administration_id == administration_id,
+                self.academics,
+            ),
+            None,
+        )
