@@ -7440,17 +7440,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Ceci-est-un-test">Ceci est un test<a class="anchor-link" href="#Ceci-est-un-test">¶</a></h1><p>Je peux mettre du TS ici :</p>
-<div class="highlight"><pre><span></span><span class="kt">number</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
-
-<span class="kd">class</span><span class="w"> </span><span class="nx">TOTO</span><span class="p">{</span>
-
-<span class="kd">const</span><span class="w"> </span><span class="nb">Array</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="w"> </span><span class="nx">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[];</span>
-<span class="w">    </span>
-<span class="c1">// anewxww comment here</span>
-<span class="p">}</span>
-<span class="sb">```</span>
-</pre></div>
+<h1 id="-PEP-695-%E2%80%93-Type-Parameter-Syntax-"><span style="text-decoration:underline; text-decoration-color:green"> PEP 695 – Type Parameter Syntax </span><a class="anchor-link" href="#-PEP-695-%E2%80%93-Type-Parameter-Syntax-">¶</a></h1><h1 id="Inserer-les-noms-ici">Inserer les noms ici<a class="anchor-link" href="#Inserer-les-noms-ici">¶</a></h1><h2 id="-Mercredi-25-Octobre-2023-"><span style="text-decoration:underline; text-decoration-color:green;"> Mercredi 25 Octobre 2023 </span><a class="anchor-link" href="#-Mercredi-25-Octobre-2023-">¶</a></h2>
 </div>
 </div>
 </div>
@@ -7984,6 +7974,45 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<style>
+
+blockquote{
+  padding: .75em .5em .75em 1em;
+  background: white;
+  border-left: 0.5em solid rgb(255,128,0);
+  color: rgb(50, 50,50)
+}
+
+blockquote::before {
+  display: block;
+  height: 0;
+  content: "“";
+  margin-left: -.95em;
+  font: italic 400%/1 Open Serif,Georgia,"Times New Roman", serif;
+  color: rgb(20, 50, 60);
+}
+
+/* for nested paragraphs in block quotes */
+blockquote p {
+  display: inline;
+}
+
+blockquote blockquote {
+  padding: .75em .5em .75em 1em;
+  background: white;
+  border-left: 0.5em solid rgb(255,178,102);
+  color: rgb(50, 50,50)
+}
+
+blockquote blockquote::before {
+  display: block;
+  height: 0;
+  content: "“";
+  margin-left: -.95em;
+  font: italic 400%/1 Open Serif,Georgia,"Times New Roman", serif;
+  color: transparent;
+}
+</style>
 <h2 id="En-R%C3%A9sum%C3%A9-">En Résumé <a class="anchor" id="resume"></a><a class="anchor-link" href="#En-R%C3%A9sum%C3%A9-">¶</a></h2><blockquote>
 <p>Un type générique s’adapte pour exécuter la même fonction sur différents types de données. Avec une classe ou procédure générique, il n'y a pas besoin de définir une version distincte pour chaque type de données lié à notre classe ou procédure.</p>
 </blockquote>
@@ -8061,9 +8090,65 @@ main {
 </div>
 </div>
 </div>
-</div></section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=38bf00b7">
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4ec07484">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f483b889">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Generic</span><span class="p">,</span> <span class="n">TypeVar</span>
+
+
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Academics</span><span class="p">:</span>
+    <span class="n">administration_id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">last_name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">first_name</span><span class="p">:</span> <span class="nb">str</span>
+
+
+<span class="n">GenericAcademics</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">"GenericAcademics"</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="n">Academics</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">University</span><span class="p">(</span><span class="n">Generic</span><span class="p">[</span><span class="n">GenericAcademics</span><span class="p">]):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">academics</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">GenericAcademics</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">academics</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">add_academic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">academic</span><span class="p">:</span> <span class="n">GenericAcademics</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">academics</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">academic</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">removeAcademic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">administration_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">removed_student</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span>
+            <span class="nb">filter</span><span class="p">(</span>
+                <span class="k">lambda</span> <span class="n">academic</span><span class="p">:</span> <span class="n">academic</span><span class="o">.</span><span class="n">administration_id</span> <span class="o">==</span> <span class="n">administration_id</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">academics</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="kc">None</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">removed_student</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">academics</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">removed_student</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_academic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">administration_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">GenericAcademics</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">next</span><span class="p">(</span>
+            <span class="nb">filter</span><span class="p">(</span>
+                <span class="k">lambda</span> <span class="n">academic</span><span class="p">:</span> <span class="n">academic</span><span class="o">.</span><span class="n">administration_id</span> <span class="o">==</span> <span class="n">administration_id</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">academics</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="kc">None</span><span class="p">,</span>
+        <span class="p">)</span>
+<span class="err">```</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b54505b0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
