@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Generic, TypeVar
+from typing import Generic, TypeVar, TypeAlias, Dict, Callable
 
 
 @dataclass(frozen=True)
@@ -43,3 +43,23 @@ class University(Generic[GenericAcademics]):
             ),
             None,
         )
+
+
+## Reduce in python 3.10
+
+Dict_like_content = TypeVar("Dict_like_content")
+Dict_like: TypeAlias = Dict[str, Dict_like_content]
+
+T = TypeVar("T")
+S = TypeVar("S")
+
+
+def reduce_dict(
+    input_dict: Dict_like[T],
+    reducer_function: Callable[[S, T, str], S],
+    initial_value: S,
+) -> S:
+    current_value = initial_value
+    for key_, value_ in input_dict.items():
+        current_value = reducer_function(current_value, value_, key_)
+    return current_value
