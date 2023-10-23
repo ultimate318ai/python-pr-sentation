@@ -7463,6 +7463,7 @@ main {
 </li>
 <li><a href="#chronologie">Chronologie d'Apparition des Types Génériques</a></li>
 <li><a href="#python1">Généricité Simple En python... jusqu'alors</a></li>
+<li><a href="#python3.12">Généricité en Python 3.12</a></li>
 <li><a href="#sources">Sources</a></li>
 </ul>
 </div>
@@ -8058,7 +8059,7 @@ blockquote blockquote::before {
 </div>
 </div>
 </div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c79131d2">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9b3d00ac">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8280,6 +8281,258 @@ blockquote blockquote::before {
 <li><a href="https://fr.wikipedia.org/wiki/C%2B%2B#Fonctionnalit%C3%A9s_introduites">https://fr.wikipedia.org/wiki/C%2B%2B#Fonctionnalit%C3%A9s_introduites</a></li>
 <li><a href="https://koor.fr/Java/Tutorial/java_generics_introduction.wp">https://koor.fr/Java/Tutorial/java_generics_introduction.wp</a></li>
 </ul>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=de506417-fc83-4b90-acba-5dcc263e415b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="G%C3%A9n%C3%A9ricit%C3%A9-En-Python-3.12-">Généricité En Python 3.12 <a class="anchor" id="python3.12"></a><a class="anchor-link" href="#G%C3%A9n%C3%A9ricit%C3%A9-En-Python-3.12-">¶</a></h2>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=be0002a7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Fini-les-imports-from-typing">Fini les imports from typing<a class="anchor-link" href="#Fini-les-imports-from-typing">¶</a></h2><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Generic</span><span class="p">,</span> <span class="n">TypeVar</span>
+
+<span class="n">_T_co</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">"_T_co"</span><span class="p">,</span> <span class="n">covariant</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bound</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">ClassA</span><span class="p">(</span><span class="n">Generic</span><span class="p">[</span><span class="n">_T_co</span><span class="p">]):</span>
+    <span class="k">def</span> <span class="nf">method1</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_T_co</span><span class="p">:</span>
+        <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ba4e226d-b8cb-4d32-a3fe-653d32725b81">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Fini-les-imports-from-typing">Fini les imports from typing<a class="anchor-link" href="#Fini-les-imports-from-typing">¶</a></h2><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ClassA</span><span class="p">[</span><span class="n">T</span><span class="p">:</span> <span class="nb">str</span><span class="p">]:</span>
+    <span class="k">def</span> <span class="nf">method1</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+        <span class="o">...</span>
+        
+<span class="k">def</span> <span class="nf">func</span><span class="p">[</span><span class="n">T</span><span class="p">](</span><span class="n">a</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=deda272a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Fini-les-imports-from-typing">Fini les imports from typing<a class="anchor-link" href="#Fini-les-imports-from-typing">¶</a></h2><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TypeAlias</span>
+
+<span class="n">_T</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">"_T"</span><span class="p">)</span>
+
+<span class="n">ListOrSet</span><span class="p">:</span> <span class="n">TypeAlias</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">_T</span><span class="p">]</span> <span class="o">|</span> <span class="nb">set</span><span class="p">[</span><span class="n">_T</span><span class="p">]</span>
+
+    
+<span class="nb">type</span> <span class="n">ListOrSet</span><span class="p">[</span><span class="n">T</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">T</span><span class="p">]</span> <span class="o">|</span> <span class="nb">set</span><span class="p">[</span><span class="n">T</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d0b1dbbe-95e7-429b-8322-d3d380161485">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="TupleVar-et-TypeVarTuple">TupleVar et TypeVarTuple<a class="anchor-link" href="#TupleVar-et-TypeVarTuple">¶</a></h1><ul>
+<li><strong>TypeVarTuple</strong> : Permet de travailler avec des tuples de longueur et de contenu variables, utile lorsque la structure du tuple est inconnue à l'avance.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="nb">type</span> <span class="n">LabeledTuple</span><span class="p">[</span><span class="o">*</span><span class="n">Ts</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">Ts</span><span class="p">]</span>
+</pre></div>
+<ul>
+<li><strong>TypeVar avec Contrainte</strong> : Vous permet d'imposer des restrictions spécifiques sur les types de paramètres. Par exemple, vous pouvez exiger que les éléments d'une séquence soient tous hashables.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="nb">type</span> <span class="n">HashableSequence</span><span class="p">[</span><span class="n">T</span><span class="p">:</span> <span class="n">Hashable</span><span class="p">]</span> <span class="o">=</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">T</span><span class="p">]</span>
+</pre></div>
+<ul>
+<li><strong>TypeVar avec Contraintes</strong> : Pour définir des contraintes plus complexes, permettant de limiter les types autorisés à une combinaison précise, tels que les entiers ou les chaînes de caractères.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="nb">type</span> <span class="n">IntOrStrSequence</span><span class="p">[</span><span class="n">T</span><span class="p">:</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">)]</span> <span class="o">=</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">T</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b3670f3c-316c-40ea-9544-44149fc901ec">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Parameter-Specification-Variables">Parameter Specification Variables<a class="anchor-link" href="#Parameter-Specification-Variables">¶</a></h2><ul>
+<li><p>Utilisées dans les listes de paramètres de type en utilisant **:</p>
+<div class="highlight"><pre><span></span><span class="nb">type</span> <span class="n">IntFunc</span><span class="p">[</span><span class="o">**</span><span class="n">P</span><span class="p">]</span> <span class="o">=</span> <span class="n">Callable</span><span class="p">[</span><span class="n">P</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span>
+</pre></div>
+</li>
+<li><p>Utiles pour transmettre les types de paramètres d'un callable à un autre, courant dans les fonctions d'ordre supérieur et les décorateurs.</p>
+</li>
+<li><p>Valides en tant que premier argument de "Callable".</p>
+</li>
+<li><p>Élimine le besoin d'utiliser TypeVar avec "Callable[..., Any]", résolvant des problèmes de typage:</p>
+<ol>
+<li>Le vérificateur de types ne peut pas vérifier le type de la fonction interne car *args et **kwargs doivent être typés "Any".</li>
+<li>"cast()" peut être nécessaire dans le corps du décorateur "add_logging" lors du retour de la fonction interne, ou il faut dire au vérificateur de types statiques d'ignorer le "return inner".</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eef775c4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Parameter-Specification-Variables">Parameter Specification Variables<a class="anchor-link" href="#Parameter-Specification-Variables">¶</a></h2><ul>
+<li><p>Exemple : un décorateur "add_logging" ajoute de la journalisation aux fonctions. Les variables de spécification de paramètres assurent que les types de paramètres sont interdépendants.</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="k">def</span> <span class="nf">add_logging</span><span class="p">[</span><span class="n">T</span><span class="p">,</span> <span class="o">**</span><span class="n">P</span><span class="p">](</span><span class="n">f</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[</span><span class="n">P</span><span class="p">,</span> <span class="n">T</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[</span><span class="n">P</span><span class="p">,</span> <span class="n">T</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">'''Un décorateur de type sûr pour ajouter une journalisation à une fonction.'''</span>
+    <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">P</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">P</span><span class="o">.</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">f</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s1"> a été appelé'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">inner</span>
+
+<span class="nd">@add_logging</span>
+<span class="k">def</span> <span class="nf">add_two</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">'''Ajoute deux nombres ensemble.'''</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</pre></div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f340f357">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Parameter-Specification-Variables">Parameter Specification Variables<a class="anchor-link" href="#Parameter-Specification-Variables">¶</a></h2><ul>
+<li>Élimine le besoin d'utiliser TypeVar avec "Callable[..., Any]", résolvant des problèmes de typage:<ol>
+<li>Le vérificateur de types ne peut pas vérifier le type de la fonction interne car *args et **kwargs doivent être typés "Any".</li>
+<li>"cast()" peut être nécessaire dans le corps du décorateur "add_logging" lors du retour de la fonction interne, ou il faut dire au vérificateur de types statiques d'ignorer le "return inner".</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c74a831a-e054-41fb-ac34-214d3ebba1a4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Les-exemple-3.11-en-3.12">Les exemple 3.11 en 3.12<a class="anchor-link" href="#Les-exemple-3.11-en-3.12">¶</a></h2><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TypeVar</span><span class="p">,</span> <span class="n">TypeAlias</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Callable</span>
+
+<span class="n">Dict_like_content</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">"Dict_like_content"</span><span class="p">)</span>
+<span class="n">Dict_like</span><span class="p">:</span> <span class="n">TypeAlias</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict_like_content</span><span class="p">]</span>
+
+<span class="n">T</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">"T"</span><span class="p">)</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s2">"S"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">reduce_dict</span><span class="p">(</span>
+    <span class="n">input_dict</span><span class="p">:</span> <span class="n">Dict_like</span><span class="p">[</span><span class="n">T</span><span class="p">],</span>
+    <span class="n">reducer_function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">S</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="n">S</span><span class="p">],</span>
+    <span class="n">initial_value</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+    <span class="n">current_value</span> <span class="o">=</span> <span class="n">initial_value</span>
+    <span class="k">for</span> <span class="n">key_</span><span class="p">,</span> <span class="n">value_</span> <span class="ow">in</span> <span class="n">input_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">current_value</span> <span class="o">=</span> <span class="n">reducer_function</span><span class="p">(</span><span class="n">current_value</span><span class="p">,</span> <span class="n">value_</span><span class="p">,</span> <span class="n">key_</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">current_value</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=75ab940a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Les-exemple-3.11-en-3.12">Les exemple 3.11 en 3.12<a class="anchor-link" href="#Les-exemple-3.11-en-3.12">¶</a></h2><div class="highlight"><pre><span></span><span class="nb">type</span> <span class="n">DictLike</span><span class="p">[</span><span class="n">T</span><span class="p">]</span> <span class="o">=</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">T</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">reduce_dict</span><span class="p">[</span><span class="n">T</span><span class="p">,</span> <span class="n">S</span><span class="p">](</span>
+    <span class="n">input_dict</span><span class="p">:</span> <span class="n">DictLike</span><span class="p">[</span><span class="n">T</span><span class="p">],</span>
+    <span class="n">reducer_function</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="n">S</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="n">S</span><span class="p">],</span>
+    <span class="n">initial_value</span><span class="p">:</span> <span class="n">S</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">S</span><span class="p">:</span>
+    <span class="n">current_value</span> <span class="o">=</span> <span class="n">initial_value</span>
+    <span class="k">for</span> <span class="n">key_</span><span class="p">,</span> <span class="n">value_</span> <span class="ow">in</span> <span class="n">input_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">current_value</span> <span class="o">=</span> <span class="n">reducer_function</span><span class="p">(</span><span class="n">current_value</span><span class="p">,</span> <span class="n">value_</span><span class="p">,</span> <span class="n">key_</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">current_value</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f86cff8f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Les-exemple-3.11-en-3.12">Les exemple 3.11 en 3.12<a class="anchor-link" href="#Les-exemple-3.11-en-3.12">¶</a></h2><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Vec2</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span>
+    <span class="n">x</span><span class="p">:</span> <span class="n">T</span>
+    <span class="n">y</span><span class="p">:</span> <span class="n">T</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">T</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">dot</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">T</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">o</span><span class="p">:</span> <span class="n">Self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Self</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Vec2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">o</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">o</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"Vec2(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)"</span>
+
+<span class="n">dict_1</span><span class="p">:</span> <span class="n">DictLike</span><span class="p">[</span><span class="n">Vec2</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"a"</span><span class="p">:</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s2">"b"</span><span class="p">:</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)}</span>
+
+<span class="k">def</span> <span class="nf">sum_result</span><span class="p">(</span><span class="n">accumulator</span><span class="p">:</span> <span class="n">Vec2</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Vec2</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Vec2</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="n">value</span>
+
+<span class="k">def</span> <span class="nf">dot_result</span><span class="p">(</span><span class="n">accumulator</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Vec2</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">accumulator</span> <span class="o">+</span> <span class="n">value</span><span class="o">.</span><span class="n">dot</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">reduce_dict</span><span class="p">(</span><span class="n">dict_1</span><span class="p">,</span> <span class="n">sum_result</span><span class="p">,</span> <span class="n">Vec2</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)))</span>
+<span class="c1"># Vec2(3, 5)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reduce_dict</span><span class="p">(</span><span class="n">dict_1</span><span class="p">,</span> <span class="n">dot_result</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="c1"># 5.841619252963779</span>
+</pre></div>
 </div>
 </div>
 </div>
