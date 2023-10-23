@@ -2,22 +2,6 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "6982f9d3",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "notes"
-    }
-   },
-   "source": [
-    "\n",
-    "# notes diverses\n",
-    "\n",
-    "- Ajouter une slide motivations pour le typage générique\n",
-    "- parler plus dans le code et moins vite :p + bien définir mapper et reducer\n"
-   ]
-  },
-  {
-   "cell_type": "markdown",
    "id": "399e5719-f991-4d3e-b6d7-12140fdd451b",
    "metadata": {
     "slideshow": {
@@ -28,25 +12,12 @@
     "# <span style=\"text-decoration:underline; text-decoration-color:orange\"> PEP 695 – Type Parameter Syntax </span>\n",
     "\n",
     "\n",
-    "#### <span style=\"text-decoration:underline; text-decoration-color:orange;\"> Mercredi 25 Octobre 2023 </span>\n"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "bcf6ee18",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "slide"
-    }
-   },
-   "source": [
-    "# Motivations\n",
     "\n",
-    "<ul style=\"list-style: none;\">\n",
-    "    <li>Le typage générique est utilisé dans plusieurs langages</li>\n",
-    "    <li>Il permet de résoudre beaucoup de problème d'Abstraction</li>\n",
-    "    <li>Il est beaucoup utilisé dans les spécifications et les signatures de functions/procèdures</li>\n",
-    "</ul>\n"
+    "### Inserer les noms ici\n",
+    "\n",
+    "\n",
+    "\n",
+    "#### <span style=\"text-decoration:underline; text-decoration-color:orange;\"> Mercredi 25 Octobre 2023 </span>\n"
    ]
   },
   {
@@ -69,7 +40,6 @@
     "    * [En Résumé](#resume)\n",
     "* [Chronologie d'Apparition des Types Génériques](#chronologie)\n",
     "* [Généricité Simple En python... jusqu'alors](#python1)\n",
-    "* [Généricité en Python 3.12](#python3.12)\n",
     "* [Sources](#sources)"
    ]
   },
@@ -118,7 +88,7 @@
     " * Types for extremely complex objects.\n",
     " */\n",
     "// List of available courses\n",
-    "type Classes = \"Advanced English\" | \"Maths\" | \"Physics\" | \"Computer Science\" | \"Baby-Foot\";\n",
+    "type Classes = \"Advanced English\" | \"Maths\" | \"Physics\" | \"Computer Science\" | \"Babi-Foot\";\n",
     "\n",
     "// A student in the University\n",
     "type Student = {\n",
@@ -732,6 +702,7 @@
    ]
   },
   {
+   "attachments": {},
    "cell_type": "markdown",
    "id": "5c12bdc7",
    "metadata": {
@@ -866,6 +837,7 @@
    ]
   },
   {
+   "attachments": {},
    "cell_type": "markdown",
    "id": "d995f54e",
    "metadata": {
@@ -1055,282 +1027,6 @@
   },
   {
    "cell_type": "markdown",
-   "id": "de506417-fc83-4b90-acba-5dcc263e415b",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "slide"
-    }
-   },
-   "source": [
-    "## Généricité En Python 3.12 <a class=\"anchor\" id=\"python3.12\"></a>"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "8d6c6620",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "subslide"
-    }
-   },
-   "source": [
-    "## Fini les imports from typing\n",
-    "\n",
-    "```python\n",
-    "from typing import Generic, TypeVar\n",
-    "\n",
-    "_T_co = TypeVar(\"_T_co\", covariant=True, bound=str)\n",
-    "\n",
-    "class ClassA(Generic[_T_co]):\n",
-    "    def method1(self) -> _T_co:\n",
-    "        ...\n",
-    "```"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "ba4e226d-b8cb-4d32-a3fe-653d32725b81",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "subslide"
-    }
-   },
-   "source": [
-    "## Fini les imports from typing\n",
-    "```python\n",
-    "class ClassA[T: str]:\n",
-    "    def method1(self) -> T:\n",
-    "        ...\n",
-    "        \n",
-    "def func[T](a: T, b: T) -> T:\n",
-    "    ...\n",
-    "```"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "6a3775f5",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "subslide"
-    }
-   },
-   "source": [
-    "## Fini les imports from typing\n",
-    "```python\n",
-    "from typing import TypeAlias\n",
-    "\n",
-    "_T = TypeVar(\"_T\")\n",
-    "\n",
-    "ListOrSet: TypeAlias = list[_T] | set[_T]\n",
-    "\n",
-    "    \n",
-    "type ListOrSet[T] = list[T] | set[T]\n",
-    "```"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "d0b1dbbe-95e7-429b-8322-d3d380161485",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "subslide"
-    }
-   },
-   "source": [
-    "# TupleVar et TypeVarTuple\n",
-    "\n",
-    "- **TypeVarTuple** : Permet de travailler avec des tuples de longueur et de contenu variables, utile lorsque la structure du tuple est inconnue à l'avance.\n",
-    "```python\n",
-    "        type LabeledTuple[*Ts] = tuple[str, *Ts]\n",
-    "```\n",
-    "\n",
-    "- **TypeVar avec Contrainte** : Vous permet d'imposer des restrictions spécifiques sur les types de paramètres. Par exemple, vous pouvez exiger que les éléments d'une séquence soient tous hashables.\n",
-    "```python\n",
-    "        type HashableSequence[T: Hashable] = Sequence[T]\n",
-    "```\n",
-    "\n",
-    "- **TypeVar avec Contraintes** : Pour définir des contraintes plus complexes, permettant de limiter les types autorisés à une combinaison précise, tels que les entiers ou les chaînes de caractères.\n",
-    "```python\n",
-    "        type IntOrStrSequence[T: (int, str)] = Sequence[T]\n",
-    "```"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "b3670f3c-316c-40ea-9544-44149fc901ec",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "subslide"
-    },
-    "tags": []
-   },
-   "source": [
-    "## Parameter Specification Variables\n",
-    "\n",
-    "- Utilisées dans les listes de paramètres de type en utilisant **:\n",
-    "\n",
-    "  ```python\n",
-    "  type IntFunc[**P] = Callable[P, int]\n",
-    "  ```\n",
-    "\n",
-    "- Utiles pour transmettre les types de paramètres d'un callable à un autre, courant dans les fonctions d'ordre supérieur et les décorateurs.\n",
-    "\n",
-    "- Valides en tant que premier argument de \"Callable\".\n",
-    "\n",
-    "\n",
-    "\n",
-    "- Élimine le besoin d'utiliser TypeVar avec \"Callable[..., Any]\", résolvant des problèmes de typage:\n",
-    "  1. Le vérificateur de types ne peut pas vérifier le type de la fonction interne car *args et **kwargs doivent être typés \"Any\".\n",
-    "  2. \"cast()\" peut être nécessaire dans le corps du décorateur \"add_logging\" lors du retour de la fonction interne, ou il faut dire au vérificateur de types statiques d'ignorer le \"return inner\"."
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "d3089c09",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "subslide"
-    }
-   },
-   "source": [
-    "## Parameter Specification Variables\n",
-    "- Exemple : un décorateur \"add_logging\" ajoute de la journalisation aux fonctions. Les variables de spécification de paramètres assurent que les types de paramètres sont interdépendants.\n",
-    "\n",
-    "  ```python\n",
-    "  from typing import Callable\n",
-    "  import logging\n",
-    "\n",
-    "  def add_logging[T, **P](f: Callable[P, T]) -> Callable[P, T]:\n",
-    "      '''Un décorateur de type sûr pour ajouter une journalisation à une fonction.'''\n",
-    "      def inner(*args: P.args, **kwargs: P.kwargs) -> T:\n",
-    "          logging.info(f'{f.__name__} a été appelé')\n",
-    "          return f(*args, **kwargs)\n",
-    "      return inner\n",
-    "\n",
-    "  @add_logging\n",
-    "  def add_two(x: float, y: float) -> float:\n",
-    "      '''Ajoute deux nombres ensemble.'''\n",
-    "      return x + y\n",
-    "  ```"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "13b6152f",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "subslide"
-    }
-   },
-   "source": [
-    "## Parameter Specification Variables\n",
-    "- Élimine le besoin d'utiliser TypeVar avec \"Callable[..., Any]\", résolvant des problèmes de typage:\n",
-    "  1. Le vérificateur de types ne peut pas vérifier le type de la fonction interne car *args et **kwargs doivent être typés \"Any\".\n",
-    "  2. \"cast()\" peut être nécessaire dans le corps du décorateur \"add_logging\" lors du retour de la fonction interne, ou il faut dire au vérificateur de types statiques d'ignorer le \"return inner\"."
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "c74a831a-e054-41fb-ac34-214d3ebba1a4",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "subslide"
-    }
-   },
-   "source": [
-    "## Les exemple 3.11 en 3.12\n",
-    "```python\n",
-    "from typing import TypeVar, TypeAlias, Dict, Callable\n",
-    "\n",
-    "Dict_like_content = TypeVar(\"Dict_like_content\")\n",
-    "Dict_like: TypeAlias = Dict[str, Dict_like_content]\n",
-    "\n",
-    "T = TypeVar(\"T\")\n",
-    "S = TypeVar(\"S\")\n",
-    "\n",
-    "def reduce_dict(\n",
-    "    input_dict: Dict_like[T],\n",
-    "    reducer_function: Callable[[S, T, str], S],\n",
-    "    initial_value: S,\n",
-    ") -> S:\n",
-    "    current_value = initial_value\n",
-    "    for key_, value_ in input_dict.items():\n",
-    "        current_value = reducer_function(current_value, value_, key_)\n",
-    "    return current_value\n",
-    "```"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "55bd7eba",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "subslide"
-    }
-   },
-   "source": [
-    "## Les exemple 3.11 en 3.12\n",
-    "```python\n",
-    "type DictLike[T] = Dict[str, T]\n",
-    "\n",
-    "def reduce_dict[T, S](\n",
-    "    input_dict: DictLike[T],\n",
-    "    reducer_function: Callable[[S, T, str], S],\n",
-    "    initial_value: S,\n",
-    ") -> S:\n",
-    "    current_value = initial_value\n",
-    "    for key_, value_ in input_dict.items():\n",
-    "        current_value = reducer_function(current_value, value_, key_)\n",
-    "    return current_value\n",
-    "```"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "46c3cf1f",
-   "metadata": {
-    "slideshow": {
-     "slide_type": "subslide"
-    }
-   },
-   "source": [
-    "## Les exemple 3.11 en 3.12\n",
-    "```python\n",
-    "class Vec2[T]:\n",
-    "    x: T\n",
-    "    y: T\n",
-    "\n",
-    "    def __init__(self, x: T, y: T):\n",
-    "        self.x = x\n",
-    "        self.y = y\n",
-    "\n",
-    "    def dot(self) -> T:\n",
-    "        return sqrt(self.x * self.x + self.y * self.y)\n",
-    "\n",
-    "    def __add__(self, o: Self) -> Self:\n",
-    "        return Vec2(self.x + o.x, self.y + o.y)\n",
-    "    \n",
-    "    def __str__(self):\n",
-    "        return f\"Vec2({self.x}, {self.y})\"\n",
-    "\n",
-    "dict_1: DictLike[Vec2[int]] = {\"a\": Vec2(1, 2), \"b\": Vec2(2, 3)}\n",
-    "\n",
-    "def sum_result(accumulator: Vec2, value: Vec2, key: str) -> Vec2:\n",
-    "    return accumulator + value\n",
-    "\n",
-    "def dot_result(accumulator: int, value: Vec2, key: str) -> int:\n",
-    "    return accumulator + value.dot()\n",
-    "\n",
-    "print(reduce_dict(dict_1, sum_result, Vec2(0, 0)))\n",
-    "# Vec2(3, 5)\n",
-    "print(reduce_dict(dict_1, dot_result, 0))\n",
-    "# 5.841619252963779\n",
-    "```"
-   ]
-  },
-  {
-   "cell_type": "markdown",
    "id": "cdb447dd",
    "metadata": {
     "slideshow": {
@@ -1350,7 +1046,7 @@
   }
  ],
  "metadata": {
-  "celltoolbar": "Slideshow",
+  "celltoolbar": "Diaporama",
   "kernelspec": {
    "display_name": "Python 3 (ipykernel)",
    "language": "python",
@@ -1366,7 +1062,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.10.11"
+   "version": "3.11.0"
   }
  },
  "nbformat": 4,
