@@ -46,7 +46,6 @@ class University(Generic[GenericAcademics]):
 
 
 ## Reduce in python 3.10
-
 Dict_like_content = TypeVar("Dict_like_content")
 Dict_like: TypeAlias = Dict[str, Dict_like_content]
 

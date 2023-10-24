@@ -7440,7 +7440,25 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="-PEP-695-%E2%80%93-Type-Parameter-Syntax-"><span style="text-decoration:underline; text-decoration-color:orange"> PEP 695 – Type Parameter Syntax </span><a class="anchor-link" href="#-PEP-695-%E2%80%93-Type-Parameter-Syntax-">¶</a></h1><h3 id="Inserer-les-noms-ici">Inserer les noms ici<a class="anchor-link" href="#Inserer-les-noms-ici">¶</a></h3><h4 id="-Mercredi-25-Octobre-2023-"><span style="text-decoration:underline; text-decoration-color:orange;"> Mercredi 25 Octobre 2023 </span><a class="anchor-link" href="#-Mercredi-25-Octobre-2023-">¶</a></h4>
+<h1 id="-PEP-695-%E2%80%93-Type-Parameter-Syntax-"><span style="text-decoration:underline; text-decoration-color:orange"> PEP 695 – Type Parameter Syntax </span><a class="anchor-link" href="#-PEP-695-%E2%80%93-Type-Parameter-Syntax-">¶</a></h1>
+<span style="color: white">aaaaaaa</span>
+
+<h4 id="-Mercredi-25-Octobre-2023-"><span style="text-decoration:underline; text-decoration-color:orange;"> Mercredi 25 Octobre 2023 </span><a class="anchor-link" href="#-Mercredi-25-Octobre-2023-">¶</a></h4>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bcf6ee18">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Motivations">Motivations<a class="anchor-link" href="#Motivations">¶</a></h1><ul style="list-style: none;">
+<li>Le typage générique est utilisé dans plusieurs langages</li>
+<li>Il permet de résoudre beaucoup de problèmes d'Abstraction</li>
+<li>C'est un sujet qui nous plait beaucoup</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7452,11 +7470,13 @@ main {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Sommaire">Sommaire<a class="anchor-link" href="#Sommaire">¶</a></h1><ul>
-<li><a href="#examples">Exemples Introductifs</a><ul>
-<li><a href="#example1">Généricité Simple</a></li>
+<li><strong>Exemples Introductifs</strong><ul>
+<li><a href="#example1">Généricité Simple</a><ul>
 <li><a href="#example1-solution1">Généricité Simple - Premiere Approche</a></li>
 <li><a href="#example1-solution2">Généricité Simple - Seconde Approche</a></li>
 <li><a href="#example1-bilan">Généricité Simple - Bilan</a></li>
+</ul>
+</li>
 <li><a href="#example2">Généricité Multiple</a></li>
 <li><a href="#resume">En Résumé</a></li>
 </ul>
@@ -7470,26 +7490,15 @@ main {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=05daf56c-b091-471f-8620-3304ba4c0ae8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Exemples-Introductifs-">Exemples Introductifs <a class="anchor" id="examples"></a><a class="anchor-link" href="#Exemples-Introductifs-">¶</a></h2><div style="justify-content: center; width: 610px; margin-left: 5px;">
-<img alt="Image d'Introduction" src="pictures/misc1.png" style="width:100%; border: 3px solid #08182F; border-radius: 80px"/>
-</div>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=594deea6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="G%C3%A9n%C3%A9ricit%C3%A9-Simple-">Généricité Simple <a class="anchor" id="example1"></a><a class="anchor-link" href="#G%C3%A9n%C3%A9ricit%C3%A9-Simple-">¶</a></h2>
+<h2 id="G%C3%A9n%C3%A9ricit%C3%A9-Simple-">Généricité Simple <a class="anchor" id="example1"></a><a class="anchor-link" href="#G%C3%A9n%C3%A9ricit%C3%A9-Simple-">¶</a></h2><div style="justify-content: center; width: 610px; margin-left: 5px;">
+<img alt="Image d'Introduction" src="pictures/misc1.png" style="width:100%; border: 3px solid #08182F; border-radius: 80px"/>
+</div>
 </div>
 </div>
 </div>
@@ -7500,11 +7509,11 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="G%C3%A9n%C3%A9ricit%C3%A9-Simple-(1/x)">Généricité Simple (1/x)<a class="anchor-link" href="#G%C3%A9n%C3%A9ricit%C3%A9-Simple-(1/x)">¶</a></h3><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<h3 id="G%C3%A9n%C3%A9ricit%C3%A9-Simple-(1/5)">Généricité Simple (1/5)<a class="anchor-link" href="#G%C3%A9n%C3%A9ricit%C3%A9-Simple-(1/5)">¶</a></h3><div class="highlight"><pre><span></span><span class="cm">/**</span>
 <span class="cm"> * Types for extremely complex objects.</span>
 <span class="cm"> */</span>
 <span class="c1">// List of available courses</span>
-<span class="kr">type</span><span class="w"> </span><span class="nx">Classes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Advanced English"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"Maths"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"Physics"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"Computer Science"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"Babi-Foot"</span><span class="p">;</span>
+<span class="kr">type</span><span class="w"> </span><span class="nx">Classes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Advanced English"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"Maths"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"Physics"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"Computer Science"</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s2">"Baby-Foot"</span><span class="p">;</span>
 
 <span class="c1">// A student in the University</span>
 <span class="kr">type</span><span class="w"> </span><span class="nx">Student</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
@@ -7568,7 +7577,7 @@ main {
 <span class="w">  </span><span class="nx">salary</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
 <span class="p">};</span>
 </pre></div>
-<p>Que ce passe-t-il si on ajoute un doctorant à l'université ?</p>
+<p><strong>Réflexion pertinente</strong> : Que ce passe-t-il si on ajoute un doctorant à l'université ?</p>
 </div>
 </div>
 </div>
@@ -7579,19 +7588,19 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="G%C3%A9n%C3%A9ricit%C3%A9-Simple-(4/5)">Généricité Simple (4/5)<a class="anchor-link" href="#G%C3%A9n%C3%A9ricit%C3%A9-Simple-(4/5)">¶</a></h3><p>Dans les faits :</p>
+<h3 id="G%C3%A9n%C3%A9ricit%C3%A9-Simple-(4/5)">Généricité Simple (4/5)<a class="anchor-link" href="#G%C3%A9n%C3%A9ricit%C3%A9-Simple-(4/5)">¶</a></h3><p><strong>Dans les faits</strong> :</p>
 <div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">robert</span><span class="o">:</span><span class="w"> </span><span class="kt">Student</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">administrationId</span><span class="o">:</span><span class="w"> </span><span class="s2">"452115r"</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">firstName</span><span class="o">:</span><span class="w"> </span><span class="s2">"Robert"</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">lastName</span><span class="o">:</span><span class="w"> </span><span class="s2">"Robert"</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">attendedClasses</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Computer Science"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Babi-Foot"</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">attendedClasses</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Computer Science"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Baby-Foot"</span><span class="p">],</span>
 <span class="p">};</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">nathan</span><span class="o">:</span><span class="w"> </span><span class="kt">DoctoralStudent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">administrationId</span><span class="o">:</span><span class="w"> </span><span class="s2">"559151d"</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">firstName</span><span class="o">:</span><span class="w"> </span><span class="s2">"D"</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">lastName</span><span class="o">:</span><span class="w"> </span><span class="s2">"Nathan"</span><span class="p">,</span>
-<span class="w">  </span><span class="nx">classesGiven</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Babi-Foot"</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">classesGiven</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Baby-Foot"</span><span class="p">],</span>
 <span class="w">  </span><span class="nx">salary</span><span class="o">:</span><span class="w"> </span><span class="kt">2100</span><span class="p">,</span>
 <span class="p">};</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">university</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">University</span><span class="p">(</span><span class="s2">"Web Master"</span><span class="p">);</span><span class="w"> </span><span class="c1">// what an University !</span>
@@ -7687,13 +7696,24 @@ main {
 </div>
 </div>
 </div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=af1b6ab0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="G%C3%A9n%C3%A9ricit%C3%A9-Simple---Premiere-Approche-(2/3)">Généricité Simple - Premiere Approche (2/3)<a class="anchor-link" href="#G%C3%A9n%C3%A9ricit%C3%A9-Simple---Premiere-Approche-(2/3)">¶</a></h3><p><strong>Et donc</strong> : Est ce que ça va marcher ?</p>
+</div>
+</div>
+</div>
+</div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=95183978">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="G%C3%A9n%C3%A9ricit%C3%A9-Simple---Premiere-Approche-(2/3)">Généricité Simple - Premiere Approche (2/3)<a class="anchor-link" href="#G%C3%A9n%C3%A9ricit%C3%A9-Simple---Premiere-Approche-(2/3)">¶</a></h3><p>Dans les faits #2 :</p>
+<p><strong>Dans les faits</strong> #2:</p>
 <div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">university</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">University</span><span class="p">(</span><span class="s2">"Web Master reborn"</span><span class="p">);</span><span class="w"> </span><span class="c1">// instantiation of a new university</span>
 <span class="nx">university</span><span class="p">.</span><span class="nx">addAcademic</span><span class="p">(</span><span class="nx">robert</span><span class="p">);</span><span class="w"> </span><span class="c1">// OK</span>
 <span class="nx">university</span><span class="p">.</span><span class="nx">addAcademic</span><span class="p">(</span><span class="nx">nathan</span><span class="p">);</span><span class="w"> </span><span class="c1">// OK</span>
@@ -7701,7 +7721,7 @@ main {
 </div>
 </div>
 </div>
-</div></section><section>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3dfbde65">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7711,7 +7731,7 @@ main {
 <h3 id="G%C3%A9n%C3%A9ricit%C3%A9-Simple---Premiere-Approche-(3/3)">Généricité Simple - Premiere Approche (3/3)<a class="anchor-link" href="#G%C3%A9n%C3%A9ricit%C3%A9-Simple---Premiere-Approche-(3/3)">¶</a></h3><ul style="list-style: none;">
 <li><span style="color: green">+ On répond au besoin</span></li>
 <li><span style="color: red">- A chaque nouveaux types géré, il faut modifier le type "générique" de notre université</span></li>
-<li><span style="color: red">- On manipule des unions d'objects complexes</span></li>
+<li><span style="color: red">- On manipule des unions d'objets complexes</span></li>
 </ul>
 </div>
 </div>
@@ -7723,7 +7743,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="G%C3%A9n%C3%A9ricit%C3%A9-Simple---Seconde-Approche-(1/4)-">Généricité Simple - Seconde Approche (1/4) <a class="anchor" id="example1-solution2"></a><a class="anchor-link" href="#G%C3%A9n%C3%A9ricit%C3%A9-Simple---Seconde-Approche-(1/4)-">¶</a></h3><p>On utilise un type générique pour notre classe d'Université :</p>
+<h3 id="G%C3%A9n%C3%A9ricit%C3%A9-Simple---Seconde-Approche-(1/5)-">Généricité Simple - Seconde Approche (1/5) <a class="anchor" id="example1-solution2"></a><a class="anchor-link" href="#G%C3%A9n%C3%A9ricit%C3%A9-Simple---Seconde-Approche-(1/5)-">¶</a></h3><p><strong>Solution Partielle</strong> On utilise un type générique pour notre classe d'Université :</p>
 <div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">University</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">academics</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">;</span>
@@ -7736,8 +7756,44 @@ main {
 <span class="w">    </span><span class="nx">addAcademic</span><span class="p">(</span><span class="nx">academic</span><span class="o">:</span><span class="w"> </span><span class="kt">T</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">{</span>
 <span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">academics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="k">this</span><span class="p">.</span><span class="nx">academics</span><span class="p">,</span><span class="w"> </span><span class="nx">academic</span><span class="p">]</span>
 <span class="w">    </span><span class="p">}</span>
-<span class="w">   </span>
-<span class="w">    </span><span class="nx">removeAcademic</span><span class="p">(</span><span class="nx">administrationId</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">(...)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ccb3feae">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Interrogation</strong> : Pourquoi est-ce une solution partielle ?</p>
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6fadb194">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="G%C3%A9n%C3%A9ricit%C3%A9-Simple---Seconde-Approche-(2/5)-">Généricité Simple - Seconde Approche (2/5) <a class="anchor" id="example1-solution2"></a><a class="anchor-link" href="#G%C3%A9n%C3%A9ricit%C3%A9-Simple---Seconde-Approche-(2/5)-">¶</a></h3><p><strong>Solution Partielle</strong> On utilise un type générique pour notre classe d'Université :</p>
+<div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">University</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">academics</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">){</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">name</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">academics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Array</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">addAcademic</span><span class="p">(</span><span class="nx">academic</span><span class="o">:</span><span class="w"> </span><span class="kt">T</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">academics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...</span><span class="k">this</span><span class="p">.</span><span class="nx">academics</span><span class="p">,</span><span class="w"> </span><span class="nx">academic</span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w"> </span><span class="nx">removeAcademic</span><span class="p">(</span><span class="nx">administrationId</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">academics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">academics</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">academic</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="k">return</span><span class="w"> </span><span class="nx">academic</span><span class="p">.</span><span class="nx">administrationId</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">administrationId</span><span class="p">})</span>
 <span class="w">        </span><span class="c1">//Property 'administrationId' does not exist on type 'T' !</span>
 <span class="w">    </span><span class="p">}</span>
@@ -7758,7 +7814,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="G%C3%A9n%C3%A9ricit%C3%A9-Simple---Seconde-Approche-(2/4)">Généricité Simple - Seconde Approche (2/4)<a class="anchor-link" href="#G%C3%A9n%C3%A9ricit%C3%A9-Simple---Seconde-Approche-(2/4)">¶</a></h3><p><strong>Solution</strong> : On part d'un type <em>Academics</em> le plus épuré possible :</p>
+<h3 id="G%C3%A9n%C3%A9ricit%C3%A9-Simple---Seconde-Approche-(3/5)">Généricité Simple - Seconde Approche (3/5)<a class="anchor-link" href="#G%C3%A9n%C3%A9ricit%C3%A9-Simple---Seconde-Approche-(3/5)">¶</a></h3><p><strong>Solution complète</strong> : On part d'un type <em>Academics</em> le plus épuré possible :</p>
 <div class="highlight"><pre><span></span><span class="kr">type</span><span class="w"> </span><span class="nx">Academics</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">administrationId</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">lastName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
@@ -7775,7 +7831,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="G%C3%A9n%C3%A9ricit%C3%A9-Simple---Seconde-Approche-(3/4)">Généricité Simple - Seconde Approche (3/4)<a class="anchor-link" href="#G%C3%A9n%C3%A9ricit%C3%A9-Simple---Seconde-Approche-(3/4)">¶</a></h3><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">University</span><span class="o">&lt;</span><span class="nx">T</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Academics</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<h3 id="G%C3%A9n%C3%A9ricit%C3%A9-Simple---Seconde-Approche-(4/5)">Généricité Simple - Seconde Approche (4/5)<a class="anchor-link" href="#G%C3%A9n%C3%A9ricit%C3%A9-Simple---Seconde-Approche-(4/5)">¶</a></h3><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">University</span><span class="o">&lt;</span><span class="nx">T</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Academics</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">academics</span><span class="o">:</span><span class="w"> </span><span class="kt">Array</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">;</span>
 
@@ -7808,7 +7864,7 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="G%C3%A9n%C3%A9ricit%C3%A9-Simple---Seconde-Approche-(4/4)">Généricité Simple - Seconde Approche (4/4)<a class="anchor-link" href="#G%C3%A9n%C3%A9ricit%C3%A9-Simple---Seconde-Approche-(4/4)">¶</a></h3><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">university</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">University</span><span class="o">&lt;</span><span class="nx">Academics</span><span class="o">&gt;</span><span class="p">(</span><span class="s2">"Web Master apotheosis"</span><span class="p">);</span><span class="w"> </span><span class="c1">// instantiation of a new university</span>
+<h3 id="G%C3%A9n%C3%A9ricit%C3%A9-Simple---Seconde-Approche-(5/5)">Généricité Simple - Seconde Approche (5/5)<a class="anchor-link" href="#G%C3%A9n%C3%A9ricit%C3%A9-Simple---Seconde-Approche-(5/5)">¶</a></h3><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">university</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">University</span><span class="o">&lt;</span><span class="nx">Academics</span><span class="o">&gt;</span><span class="p">(</span><span class="s2">"Web Master apotheosis"</span><span class="p">);</span><span class="w"> </span><span class="c1">// instantiation of a new university</span>
 <span class="nx">university</span><span class="p">.</span><span class="nx">addAcademic</span><span class="p">(</span><span class="nx">robert</span><span class="p">)</span><span class="w"> </span><span class="c1">// OK</span>
 <span class="nx">university</span><span class="p">.</span><span class="nx">addAcademic</span><span class="p">(</span><span class="nx">nathan</span><span class="p">)</span><span class="w"> </span><span class="c1">// OK, this is fine</span>
 </pre></div>
@@ -7839,7 +7895,9 @@ main {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="G%C3%A9n%C3%A9ricit%C3%A9-Multiple-">Généricité Multiple <a class="anchor" id="example2"></a><a class="anchor-link" href="#G%C3%A9n%C3%A9ricit%C3%A9-Multiple-">¶</a></h2>
+<h2 id="G%C3%A9n%C3%A9ricit%C3%A9-Multiple-">Généricité Multiple <a class="anchor" id="example2"></a><a class="anchor-link" href="#G%C3%A9n%C3%A9ricit%C3%A9-Multiple-">¶</a></h2><div style="justify-content: center; width: 610px; margin-left: 10px;">
+<img alt="Image sur le typage generique" src="pictures/mfr.png" style="width:100%; border: 3px solid #08182F; border-radius: 50px"/>
+</div>
 </div>
 </div>
 </div>
@@ -8020,18 +8078,33 @@ blockquote blockquote::before {
 }
 </style>
 <h2 id="En-R%C3%A9sum%C3%A9-">En Résumé <a class="anchor" id="resume"></a><a class="anchor-link" href="#En-R%C3%A9sum%C3%A9-">¶</a></h2><blockquote>
-<p>Un type générique s’adapte pour exécuter la même fonction sur différents types de données. Avec une classe ou procédure générique, il n'y a pas besoin de définir une version distincte pour chaque type de données lié à notre classe ou procédure.</p>
+<p>Un type générique s’adapte pour exécuter la même fonction sur différents types de données. Avec une classe ou procédure générique, il n'y a pas besoin de définir une version distincte pour chaque types de données liés à notre classe ou procédure.</p>
 </blockquote>
 <blockquote>
-<p>On peut contraindre ces types générique, soit par une borne inférieure (ici notre extends), dans d'autres langages, on peut également contraindre une borne supérieure (avec le mot cléf <em>super</em> en JAVA par exemple).</p>
+<p>On peut contraindre ces types générique par une borne (notre extends en Typescript), dans d'autres langages, on peut également contraindre une borne inférieure ou supérieure (avec les mots cléfs <em>super</em> et <em>extends</em> en JAVA par exemple).</p>
 </blockquote>
 <blockquote>
-<p>On peut utiliser plusieurs types génériques dans la même définitions de class, méthode, ...</p>
+<p>On peut utiliser plusieurs types génériques dans la même définition de classes, méthodes, ...</p>
 </blockquote>
 </div>
 </div>
 </div>
-</div></section><section>
+</div><aside class="notes">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7dca709f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Bornes inf et sup :</p>
+<p>Borne sup : On étend notre objet -&gt; we can GET elements out of the structure, but we CAN NOT PUT elements into it.</p>
+<p>Borne inf : On à au plus notre object, ou alors un de ces sous types -&gt; we can PUT elements into the structure, but we CAN NOT GET elements out of it.</p>
+<p>-&gt; C'est plus sûr pour le compilateur.</p>
+</div>
+</div>
+</div>
+</div>
+</aside></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5c12bdc7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8268,23 +8341,6 @@ blockquote blockquote::before {
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cdb447dd">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Sources-">Sources <a class="anchor" id="sources"></a><a class="anchor-link" href="#Sources-">¶</a></h1><p>Release des versions des languages qui introduisent les types génériques :</p>
-<ul>
-<li><a href="https://github.com/rust-lang/rust/blob/master/RELEASES.md">https://github.com/rust-lang/rust/blob/master/RELEASES.md</a></li>
-<li><a href="https://en.wikipedia.org/wiki/TypeScript#Release_history">https://en.wikipedia.org/wiki/TypeScript#Release_history</a></li>
-<li><a href="https://fr.wikipedia.org/wiki/C%2B%2B#Fonctionnalit%C3%A9s_introduites">https://fr.wikipedia.org/wiki/C%2B%2B#Fonctionnalit%C3%A9s_introduites</a></li>
-<li><a href="https://koor.fr/Java/Tutorial/java_generics_introduction.wp">https://koor.fr/Java/Tutorial/java_generics_introduction.wp</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=de506417-fc83-4b90-acba-5dcc263e415b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8296,7 +8352,7 @@ blockquote blockquote::before {
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=be0002a7">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8d6c6620">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8331,7 +8387,7 @@ blockquote blockquote::before {
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=deda272a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6a3775f5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8401,7 +8457,7 @@ blockquote blockquote::before {
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eef775c4">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d3089c09">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8430,7 +8486,7 @@ blockquote blockquote::before {
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f340f357">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=13b6152f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8475,7 +8531,7 @@ blockquote blockquote::before {
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=75ab940a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=55bd7eba">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8497,7 +8553,7 @@ blockquote blockquote::before {
 </div>
 </div>
 </div></section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f86cff8f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=46c3cf1f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8533,6 +8589,34 @@ blockquote blockquote::before {
 <span class="nb">print</span><span class="p">(</span><span class="n">reduce_dict</span><span class="p">(</span><span class="n">dict_1</span><span class="p">,</span> <span class="n">dot_result</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 <span class="c1"># 5.841619252963779</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cdb447dd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Sources-">Sources <a class="anchor" id="sources"></a><a class="anchor-link" href="#Sources-">¶</a></h1><p>Release des versions des languages qui introduisent les types génériques :</p>
+<ul>
+<li><a href="https://github.com/rust-lang/rust/blob/master/RELEASES.md">Rust</a></li>
+<li><a href="https://en.wikipedia.org/wiki/TypeScript#Release_history">TypeScript</a></li>
+<li><a href="https://fr.wikipedia.org/wiki/C%2B%2B#Fonctionnalit%C3%A9s_introduites">C++</a></li>
+<li><a href="https://koor.fr/Java/Tutorial/java_generics_introduction.wp">Java</a></li>
+</ul>
+<p>Pour aller plus loin sur les types génériques (sur JAVA):</p>
+<ul>
+<li><a href="https://medium.com/androidiots/generics-variance-2def0411ce1b">Generics &amp; Variance</a></li>
+</ul>
+<p>Les autres PEP Python évoquées dans la présentation:</p>
+<ul>
+<li><a href="https://peps.python.org/pep-0484/">PEP 484 – Type Hints</a></li>
+<li><a href="https://peps.python.org/pep-0560/">PEP 560 – Core support for typing module and generic types</a></li>
+<li><a href="https://peps.python.org/pep-0585/">PEP 585 – Type Hinting Generics In Standard Collections</a></li>
+<li><a href="https://peps.python.org/pep-0646/">PEP 646 – Variadic Generics</a></li>
+</ul>
 </div>
 </div>
 </div>
