@@ -15178,6 +15178,17 @@ div.jp-OutputPrompt {
 <li>Les tâches <em>IO-bound</em>, qui dépendent principalement des entrées-sorties, pendant lesquelles le CPU passe le plus clair de son temps à attendre ;</li>
 <li>Les tâches <em>CPU-bound</em>, qui dépendent surtout du CPU.</li>
 </ul>
+
+</div>
+</div>
+</div>
+</div></section><section >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>La programmation concurrente permet de gagner en rapidité d'exécution :</p>
 <ul>
 <li>Pour les tâches <em>IO-bound</em>, un unique cœur peut exécuter les différentes tâches en profitant des temps d'attente ;</li>
@@ -15296,57 +15307,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div><div class="fragment" >
-<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Avec des threads :</p>
-
-</div>
-</div>
-</div>
-</div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">time</span> doing_several_things_with_threads(5, doing_something_with_io);
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>CPU times: user 0 ns, sys: 0 ns, total: 0 ns
-Wall time: 1 s
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div></div><div class="fragment" >
 <div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15358,12 +15319,12 @@ Wall time: 1 s
 </div>
 </div>
 </div>
-</div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment" ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">time</span> doing_several_things_sequentially(5, doing_something_with_io);
@@ -15388,6 +15349,56 @@ Wall time: 1 s
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>CPU times: user 0 ns, sys: 0 ns, total: 0 ns
 Wall time: 5 s
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div></div><div class="fragment" >
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Avec des threads :</p>
+
+</div>
+</div>
+</div>
+</div></div><div class="fragment" ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">time</span> doing_several_things_with_threads(5, doing_something_with_io);
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>CPU times: user 0 ns, sys: 0 ns, total: 0 ns
+Wall time: 1 s
 </pre>
 </div>
 </div>
@@ -15460,7 +15471,7 @@ Wall time: 5 s
 </div>
 </div>
 </div>
-</div><div class="fragment" >
+</div>
 <div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15472,7 +15483,7 @@ Wall time: 5 s
 </div>
 </div>
 </div>
-</div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div><div class="fragment" ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15500,8 +15511,8 @@ Wall time: 5 s
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>CPU times: user 5.05 s, sys: 922 ms, total: 5.97 s
-Wall time: 6.01 s
+<pre>CPU times: user 4.73 s, sys: 1.02 s, total: 5.75 s
+Wall time: 5.75 s
 </pre>
 </div>
 </div>
@@ -15550,8 +15561,8 @@ Wall time: 6.01 s
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>CPU times: user 4.05 s, sys: 953 ms, total: 5 s
-Wall time: 5 s
+<pre>CPU times: user 3.83 s, sys: 688 ms, total: 4.52 s
+Wall time: 4.49 s
 </pre>
 </div>
 </div>
@@ -15656,7 +15667,7 @@ Wall time: 5 s
 </div>
 </div>
 </div>
-</div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></div><div class="fragment" ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15684,7 +15695,7 @@ Wall time: 5 s
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>CPU times: user 15.6 ms, sys: 31.2 ms, total: 46.9 ms
+<pre>CPU times: user 15.6 ms, sys: 46.9 ms, total: 62.5 ms
 Wall time: 1.11 s
 </pre>
 </div>
@@ -15790,7 +15801,7 @@ Wall time: 5 s
 </div>
 </div>
 </div>
-</div><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div></div><div class="fragment" ><div  class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15818,8 +15829,8 @@ Wall time: 5 s
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>CPU times: user 31.2 ms, sys: 93.8 ms, total: 125 ms
-Wall time: 1.19 s
+<pre>CPU times: user 0 ns, sys: 78.1 ms, total: 78.1 ms
+Wall time: 1.18 s
 </pre>
 </div>
 </div>
@@ -15868,8 +15879,8 @@ Wall time: 1.19 s
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>CPU times: user 4.17 s, sys: 844 ms, total: 5.02 s
-Wall time: 5 s
+<pre>CPU times: user 4.08 s, sys: 641 ms, total: 4.72 s
+Wall time: 4.74 s
 </pre>
 </div>
 </div>
@@ -15953,7 +15964,7 @@ Wall time: 5 s
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>1.11 s ± 6.03 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>1.1 s ± 3.68 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -16002,7 +16013,7 @@ Wall time: 5 s
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>1 s ± 487 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<pre>1 s ± 255 µs per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre>
 </div>
 </div>
@@ -16130,7 +16141,7 @@ Wall time: 5 s
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>elapsed time with asyncio: 1.0010147094726562
+<pre>elapsed time with asyncio: 1.0013670921325684
 </pre>
 </div>
 </div>
@@ -16171,7 +16182,7 @@ Wall time: 5 s
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>elapsed time sequentially: 1.0033788681030273
+<pre>elapsed time sequentially: 1.002763271331787
 </pre>
 </div>
 </div>
@@ -16223,7 +16234,7 @@ Wall time: 5 s
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>elapsed time with asyncio: 5.1629862785339355
+<pre>elapsed time with asyncio: 4.787231683731079
 </pre>
 </div>
 </div>
